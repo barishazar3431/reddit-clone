@@ -1,11 +1,10 @@
 import React from 'react';
 import Card from '../components/ui/Card';
+import NavBar from '../layout/NavBar';
 
 function HomePage() {
   return (
-    <Card>
-      <div className='text-white'>HomePage</div>
-    </Card>
+    <NavBar />
   );
 }
 

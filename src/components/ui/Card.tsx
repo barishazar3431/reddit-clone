@@ -6,7 +6,7 @@ interface CardProps {
 
 function Card({ children }: CardProps) {
   return (
-    <div className="p-3 bg-neutral-800 rounded-md border-[1px] border-neutral-700">
+    <div className="p-2 bg-neutral-800 rounded-md border border-neutral-700">
       {children}
     </div>
   );
