@@ -6,18 +6,17 @@ import { Link } from 'react-router-dom';
 import { AiOutlineStar } from 'react-icons/ai';
 import dummyData from '../../assets/DummyData';
 
-
 export default function CommunitiesDropDown() {
-  const [isOpen, setIsOpen] = useState(true);
-  const buttonRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(buttonRef, () => setIsOpen(false));
+  const [isOpen, setIsOpen] = useState(false);
+  const dropDownRef = useRef<HTMLDivElement>(null);
+  useOnClickOutside(dropDownRef, () => setIsOpen(false));
 
   const toggleIsOpen = () => {
     setIsOpen((prev) => !prev);
   };
 
   return (
-    <div className="relative" ref={buttonRef}>
+    <div className="relative" ref={dropDownRef}>
       <button
         onClick={toggleIsOpen}
         className={`${
@@ -35,7 +34,7 @@ export default function CommunitiesDropDown() {
           <input
             type="text"
             placeholder="Filter"
-            className="bg-neutral-800 mt-4 mx-4 w-[calc(100%-2rem)]  py-1 px-2 text-sm border border-neutral-700 outline-none hover:border-white focus:border-white"
+            className="bg-neutral-800 mt-4 mx-4 w-[calc(100%-2rem)]  py-1 px-2 text-sm border border-neutral-700 outline-none placeholder-neutral-500 hover:border-white focus:border-white"
           />
           <span className="text-[0.6rem] uppercase text-neutral-400 mt-4 mb-3 block ml-6">
             Your Communities

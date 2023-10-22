@@ -1,10 +1,8 @@
 import React from 'react';
-import NavBar from '../layout/NavBar';
+import Header from '../layout/Header';
 
 function HomePage() {
-  return (
-    <NavBar />
-  );
+  return <Header />;
 }
 
 export default HomePage;

@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CommunitiesDropDown from '../components/header/CommunitiesDropDown';
 
-
-function NavBar() {
+function Header() {
   return (
     <header className="fixed w-full bg-neutral-900 py-2 px-4 border-b-neutral-700 border-b flex items-center gap-1">
       <Link to={'/'} className="flex gap-2 pr-5">
@@ -14,14 +13,11 @@ function NavBar() {
             className="w-8"
           />
         </div>
-        <span className="text-neutral-300  text-xl  tracking-wide">
-          reddit
-        </span>
+        <span className="text-neutral-300  text-xl  tracking-wide">reddit</span>
       </Link>
       <CommunitiesDropDown />
-      
     </header>
   );
 }
 
-export default NavBar;
+export default Header;
