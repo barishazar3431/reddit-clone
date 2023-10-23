@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommunitiesDropDown from '../components/header/CommunitiesDropDown';
+import HeaderSearchForm from '../components/header/HeaderSearchForm';
 
 function Header() {
   return (
-    <header className="fixed w-full bg-neutral-900 py-2 px-4 border-b-neutral-700 border-b flex items-center gap-1">
+    <header className="fixed w-full  bg-white dark:bg-neutral-900 py-[0.35rem] px-4 border-b-neutral-200 dark:border-b-neutral-700 border-b flex items-center gap-1">
       <Link to={'/'} className="flex gap-2 pr-5">
         <div>
           <img
@@ -13,9 +14,10 @@ function Header() {
             className="w-8"
           />
         </div>
-        <span className="text-neutral-300  text-xl  tracking-wide">reddit</span>
+        <span className="dark:text-neutral-300 text-black font-medium  text-xl  tracking-wide">reddit</span>
       </Link>
       <CommunitiesDropDown />
+      <HeaderSearchForm />
     </header>
   );
 }
