@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 type Props = {
   children: React.ReactNode;
@@ -11,15 +11,7 @@ export default function NotificationBadge({
   content,
   max = 99,
 }: Props) {
-  const [isShown, setIsShown] = useState(true);
-
-  useEffect(() => {
-    const handleIsShown = () => {
-      setIsShown(content > 0);
-    };
-
-    handleIsShown();
-  }, [content]);
+  const isShown = content > 0;
 
   return (
     <div className="relative">

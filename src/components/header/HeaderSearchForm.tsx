@@ -1,9 +1,9 @@
 import React from 'react';
 import { CiSearch } from 'react-icons/ci';
 
-type Props = {};
 
-export default function HeaderSearchForm({}: Props) {
+
+export default function HeaderSearchForm() {
   return (
     <div className="relative flex-1 mx-3">
       <label htmlFor="search">

@@ -1,26 +1,20 @@
-import React, { useState, useRef } from 'react';
+import React, {  LegacyRef } from 'react';
 import { AiOutlineDown } from 'react-icons/ai';
 import { AiFillHome } from 'react-icons/ai';
-import useOnClickOutside from '../../hooks/useOnClickOutside';
 import { Link } from 'react-router-dom';
 import { AiOutlineStar } from 'react-icons/ai';
 import dummyData from '../../assets/DummyData';
+import useDropDown from '../../hooks/useDropDown';
 
 export default function CommunitiesDropDown() {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropDownRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(dropDownRef, () => setIsOpen(false));
-
-  const toggleIsOpen = () => {
-    setIsOpen((prev) => !prev);
-  };
+  const { dropDownRef, isShown, toggleIsShown } = useDropDown();
 
   return (
-    <div className="relative" ref={dropDownRef}>
+    <div className="relative" ref={dropDownRef as LegacyRef<HTMLDivElement>}>
       <button
-        onClick={toggleIsOpen}
+        onClick={toggleIsShown}
         className={`${
-          isOpen
+          isShown
             ? 'border-neutral-100 dark:border-neutral-700'
             : 'border-transparent'
         } border hover:border-neutral-100 dark:hover:border-neutral-700  py-1 px-3`}
@@ -31,7 +25,7 @@ export default function CommunitiesDropDown() {
           <AiOutlineDown className="text-sm" />
         </div>
       </button>
-      {isOpen && (
+      {isShown && (
         <div className=" absolute top-8 left-0 right-0 bg-white dark:bg-neutral-900 border border-t-transparent dark:border-t-transparent border-neutral-200 dark:border-neutral-700 h-[30rem] overflow-auto">
           <input
             autoFocus

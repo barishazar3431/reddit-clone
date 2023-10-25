@@ -2,12 +2,10 @@ import React from 'react';
 import { AiOutlineBell } from 'react-icons/ai';
 import NotificationBadge from '../ui/NotificationBadge';
 
-type Props = {};
-
-export default function NotificationsDropDown({}: Props) {
+export default function NotificationsDropDown() {
   return (
-    <NotificationBadge content={12}>
-      <button className="hover:bg-neutral-200 dark:hover:bg-neutral-800 p-1">
+    <NotificationBadge content={9}>
+      <button className='h-fit'>
         <AiOutlineBell className="" />
       </button>
     </NotificationBadge>
