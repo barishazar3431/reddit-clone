@@ -5,7 +5,7 @@ import NotificationBadge from '../ui/NotificationBadge';
 export default function NotificationsDropDown() {
   return (
     <NotificationBadge content={9}>
-      <button className='h-fit'>
+      <button className='block'>
         <AiOutlineBell className="" />
       </button>
     </NotificationBadge>

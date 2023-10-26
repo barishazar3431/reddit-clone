@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function useDropDown() {
   const [isShown, setIsShown] = useState(false);
-  const dropDownRef = useRef<HTMLElement>(null);
+  const dropDownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

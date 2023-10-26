@@ -7,7 +7,7 @@ import HeaderNavButtons from '../components/header/HeaderNavButtons';
 import ProfileDropDown from '../components/header/ProfileDropDown';
 function Header() {
   return (
-    <header className="fixed w-full  bg-white dark:bg-neutral-900 py-[0.35rem] px-4 border-b-neutral-200 dark:border-b-neutral-700 border-b flex items-center gap-1">
+    <header className="fixed w-full h-12  bg-white dark:bg-neutral-900 py-[0.35rem] px-4 border-b-neutral-200 dark:border-b-neutral-700 border-b flex items-center gap-1">
       <Link to={'/'} className="flex gap-2 pr-5">
         <div>
           <img

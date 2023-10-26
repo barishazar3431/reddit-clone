@@ -8,10 +8,10 @@
     height: 200vh;
     /* background-color: black; */
     background-color: #dae0e6;
-    font-family:  sans-serif;
+    font-family: sans-serif;
   }
 
-  a, button {
+  a {
     display: block;
   }
 }
