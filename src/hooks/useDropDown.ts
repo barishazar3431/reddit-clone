@@ -24,5 +24,5 @@ export default function useDropDown() {
     setIsShown((prev) => !prev);
   };
 
-  return {isShown, dropDownRef, toggleIsShown};
+  return {isShown, dropDownRef, toggleIsShown, setIsShown};
 }

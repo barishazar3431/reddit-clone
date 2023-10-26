@@ -1,4 +1,4 @@
-import React, { LegacyRef } from 'react';
+import React from 'react';
 import { AiOutlineDown } from 'react-icons/ai';
 import { AiFillHome } from 'react-icons/ai';
 import { Link } from 'react-router-dom';

@@ -7,7 +7,7 @@ import ToolTip from '../ui/ToolTip';
 
 export default function HeaderNavButtons() {
   return (
-    <div className="flex gap-2 items-center text-2xl dark:text-white">
+    <div className="flex gap-2 items-center text-2xl dark:text-white ml-4">
       <ToolTip content="Popular">
         <HeaderNavItem>
           <Link to={'/r/popular'}>

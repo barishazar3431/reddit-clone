@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommunitiesDropDown from '../components/header/CommunitiesDropDown';
-import HeaderSearchForm from '../components/header/HeaderSearchForm';
+import HeaderSearchBar from '../components/header/HeaderSearchBar';
 
 import HeaderNavButtons from '../components/header/HeaderNavButtons';
 import ProfileDropDown from '../components/header/ProfileDropDown';
@@ -22,7 +22,7 @@ function Header() {
       </Link>
 
       <CommunitiesDropDown />
-      <HeaderSearchForm />
+      <HeaderSearchBar />
       <HeaderNavButtons />
       <ProfileDropDown />
     </header>
