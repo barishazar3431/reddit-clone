@@ -23,8 +23,8 @@ export default function ProfileDropDown({}: Props) {
           <div className="flex flex-col mr-16 gap-[0.1rem] items-start">
             <span className="text-xs font-bold dark:text-white">John Doe</span>
             <div className="flex items-center gap-1">
-              <SiSecurityscorecard className="text-red-500 text-xs" />
-              <span className="text-xs text-neutral-400 font-bold">
+              <SiSecurityscorecard className="text-red-600 text-xs" />
+              <span className="text-xs text-slate-400 font-bold">
                 11.3k karma
               </span>
             </div>
