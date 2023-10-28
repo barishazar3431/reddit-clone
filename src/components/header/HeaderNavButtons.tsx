@@ -9,38 +9,26 @@ export default function HeaderNavButtons() {
   return (
     <div className="flex gap-2 items-center text-2xl dark:text-white ml-4">
       <ToolTip content="Popular">
-        <HeaderNavItem>
-          <Link to={'/r/popular'}>
-            <BiTrendingUp />
-          </Link>
-        </HeaderNavItem>
+        <Link
+          to={'/r/popular'}
+          className="hover:bg-neutral-200 dark:hover:bg-neutral-800 p-1 block"
+        >
+          <BiTrendingUp />
+        </Link>
       </ToolTip>
 
       <ToolTip content="Notifications">
-        <HeaderNavItem>
-          <NotificationsDropDown />
-        </HeaderNavItem>
+        <NotificationsDropDown />
       </ToolTip>
 
       <ToolTip content="Create Post">
-        <HeaderNavItem>
-          <Link to={'/submit'}>
-            <AiOutlinePlus />
-          </Link>
-        </HeaderNavItem>
+        <Link
+          to={'/submit'}
+          className="hover:bg-neutral-200 dark:hover:bg-neutral-800 p-1 block"
+        >
+          <AiOutlinePlus />
+        </Link>
       </ToolTip>
-    </div>
-  );
-}
-
-type HeaderNavItemProps = {
-  children: React.ReactNode;
-};
-
-function HeaderNavItem({ children }: HeaderNavItemProps) {
-  return (
-    <div className="hover:bg-neutral-200 dark:hover:bg-neutral-800 p-1">
-      {children}
     </div>
   );
 }

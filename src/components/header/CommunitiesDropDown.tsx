@@ -15,12 +15,12 @@ export default function CommunitiesDropDown() {
       <DropDownTriggerButton onClick={toggleIsShown} isShown={isShown}>
         <div className="flex text-black dark:text-white justify-between items-center gap-2">
           <AiFillHome className="text-2xl" />
-          <span className="mr-40 text-sm font-light">Home</span>
+          <span className="mr-40 text-sm font-light md:hidden">Home</span>
           <AiOutlineDown className="text-sm" />
         </div>
       </DropDownTriggerButton>
       {isShown && (
-        <div className=" absolute top-8 left-0 right-0 bg-white dark:bg-neutral-900 border border-t-transparent dark:border-t-transparent border-neutral-200 dark:border-neutral-700 h-[30rem] overflow-auto">
+        <div className=" absolute top-8 left-0 right-0 min-w-fit bg-white dark:bg-neutral-900 border border-t-transparent dark:border-t-transparent border-neutral-200 dark:border-neutral-700 h-[30rem] overflow-auto">
           <input
             autoFocus
             type="text"

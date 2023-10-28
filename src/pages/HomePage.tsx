@@ -1,16 +1,45 @@
 import React from 'react';
 import Header from '../layouts/Header';
 import MainLayout from '../layouts/MainLayout';
+import HomeAside from '../components/main-feed/HomeAside';
+import PostItem from '../components/main-feed/PostItem';
 
 function HomePage() {
   return (
     <MainLayout>
-      <div className='flex justify-center items-start gap-5 px-3 py-5'>
-        <div className='bg-blue-600  w-[640px] flex-shrink'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda quibusdam officia eaque earum deleniti animi exercitationem ipsum sint, ad, enim eum a possimus, doloremque atque corporis? Officia, facere nobis?</div>
-        <div className='bg-yellow-300  w-[310px]'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ipsum nulla ducimus corporis modi, ex nam numquam nemo? Modi esse nihil iste, aut delectus rerum incidunt iure aliquam sit sunt.</div>
+      <div className="flex justify-center items-start gap-5 px-3 py-5">
+        <div className="w-[640px] lg:flex-1 flex-shrink flex flex-col gap-3">
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+        </div>
+        <div className="w-[310px] lg:hidden">
+          <HomeAside />
+        </div>
       </div>
     </MainLayout>
-  )
+  );
 }
 
 export default HomePage;

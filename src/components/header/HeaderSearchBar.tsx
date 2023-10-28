@@ -14,7 +14,6 @@ export default function HeaderSearchBar() {
       } else if (event.key === 'Escape') {
         inputRef.current?.blur();
       }
-
     };
     document.addEventListener('keyup', handleKeyEvent);
 
@@ -50,8 +49,8 @@ export default function HeaderSearchBar() {
       />
 
       {isShown && (
-        <div className="absolute left-0 right-0 mt-1 bg-white rounded-sm py-3">
-          <p className="text-neutral-600 font-semibold text-sm px-4 mb-3">
+        <div className="absolute left-0 right-0 min-w-max mt-1 bg-white dark:bg-neutral-900 rounded-sm py-3">
+          <p className="text-neutral-600 dark:text-neutral-300 font-semibold text-sm px-4 mb-3">
             Communities
           </p>
           <ul>
@@ -59,7 +58,9 @@ export default function HeaderSearchBar() {
               <li className="px-4 py-2 hover:bg-neutral-100 flex items-center gap-2">
                 <img src={item.src} alt="" className="w-6 h-6 rounded-full " />
                 <div className="flex flex-col">
-                  <span className="font-bold text-sm">{item.name}</span>
+                  <span className="font-bold text-sm dark:text-neutral-300">
+                    {item.name}
+                  </span>
                   <span className="text-xs text-neutral-500">
                     Community &#x2022; {item.memberCount} members
                   </span>

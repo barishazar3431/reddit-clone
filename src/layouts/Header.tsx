@@ -12,14 +12,14 @@ function Header() {
      dark:border-b-neutral-700 border-b flex items-center gap-1"
     >
       <Link to={'/'} className="flex gap-2 pr-5">
-        <div>
+        <div className='w-8'>
           <img
             src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-reddit-circle-512.png"
             alt="Reddit Logo"
             className="w-8"
           />
         </div>
-        <span className="dark:text-neutral-300 text-black font-medium  text-xl  tracking-wide">
+        <span className="dark:text-neutral-300 text-black font-medium  text-xl  tracking-wide lg:hidden">
           reddit
         </span>
       </Link>

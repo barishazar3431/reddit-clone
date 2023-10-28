@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useDropDown from '../../hooks/useDropDown';
 import { AiOutlineDown, AiOutlineEye } from 'react-icons/ai';
 import { SiSecurityscorecard } from 'react-icons/si';
@@ -11,6 +11,28 @@ type Props = {};
 
 export default function ProfileDropDown({}: Props) {
   const { dropDownRef, isShown, toggleIsShown } = useDropDown();
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
+
+  useEffect(() => {
+    const isDarkTheme = localStorage.getItem('isDarkTheme') === 'true';
+    setIsDarkTheme(isDarkTheme);
+  }, []);
+
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('isDarkTheme', 'true');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('isDarkTheme', 'false');
+    }
+
+  }, [isDarkTheme]);
+
+  const handleDarkThemeToggle = () => {
+    setIsDarkTheme((prev) => !prev);
+  };
+
   return (
     <div ref={dropDownRef} className="relative ml-4">
       <DropDownTriggerButton onClick={toggleIsShown} isShown={isShown}>
@@ -20,7 +42,7 @@ export default function ProfileDropDown({}: Props) {
             alt="Profile"
             className="w-8 rounded-full mr-1 relative bottom-[3px]"
           />
-          <div className="flex flex-col mr-16 gap-[0.1rem] items-start">
+          <div className="flex flex-col mr-16 gap-[0.1rem] items-start lg:hidden">
             <span className="text-xs font-bold dark:text-white">John Doe</span>
             <div className="flex items-center gap-1">
               <SiSecurityscorecard className="text-red-600 text-xs" />
@@ -34,7 +56,7 @@ export default function ProfileDropDown({}: Props) {
       </DropDownTriggerButton>
 
       {isShown && (
-        <div className="absolute right-0 mt-2 w-64 max-h-[75vh] bg-white rounded-sm dark:bg-neutral-900">
+        <div className="absolute right-0 mt-2 w-64 max-h-[75vh] bg-white rounded-sm dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700">
           <div className="border border-transparent border-b-neutral-200 dark:border-b-neutral-700 pb-3">
             <div className="pt-4 pb-3 font-bold text-neutral-400 dark:text-neutral-600  grid grid-cols-12 items-center">
               <CgProfile className="text-2xl col-start-2 col-span-1" />
@@ -64,7 +86,7 @@ export default function ProfileDropDown({}: Props) {
               </span>
             </div>
 
-            <button className="block w-full">
+            <button onClick={handleDarkThemeToggle} className="block w-full">
               <div className="py-3 font-semibold text-black dark:text-neutral-300  grid grid-cols-12 items-center justify-items-start hover:bg-neutral-100 dark:hover:bg-neutral-800">
                 <span className="text-sm col-start-4 col-span-7">
                   Dark Mode
