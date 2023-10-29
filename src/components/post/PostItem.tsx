@@ -10,7 +10,7 @@ type Props = {};
 export default function PostItem({}: Props) {
   return (
     <Link
-      to="#"
+      to="/posts/12"
       className="bg-white dark:bg-neutral-900 border border-transparent hover:border-black dark:hover:border-neutral-500
        flex gap-3 p-2 pb-0 rounded-md"
     >
@@ -30,7 +30,7 @@ export default function PostItem({}: Props) {
             alt=""
             className="w-5 rounded-full"
           />
-          <span className="text-sm font-bold dark:text-neutral-300">r/unpopularopinion</span>
+          <Link to='/error' className="text-sm font-bold dark:text-neutral-300 hover:underline">r/unpopularopinion</Link>
           <span className="text-neutral-500 text-xs">
             &#x2022; Posted by u/JohnDoe 4 hours ago
           </span>

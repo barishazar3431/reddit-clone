@@ -20,7 +20,7 @@ export default function HeaderSearchBar() {
     return () => {
       document.removeEventListener('keyup', handleKeyEvent);
     };
-  }, [inputRef]);
+  }, []);
 
   const handleSearchBarFocus = () => {
     setIsShown(true);
@@ -35,7 +35,7 @@ export default function HeaderSearchBar() {
       ref={dropDownRef}
       onFocus={handleSearchBarFocus}
       onBlur={handleSearchBarBlur}
-      className="relative flex-1 mx-3"
+      className="relative flex-1 mx-3 sm:mx-0"
     >
       <label htmlFor="search">
         <CiSearch className="text-2xl absolute top-1/2 left-3 -translate-y-1/2 text-neutral-500 bg-none" />
@@ -55,7 +55,7 @@ export default function HeaderSearchBar() {
           </p>
           <ul>
             {dummyData.searchItems.map((item) => (
-              <li className="px-4 py-2 hover:bg-neutral-100 flex items-center gap-2">
+              <li className="px-4 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 flex items-center gap-2">
                 <img src={item.src} alt="" className="w-6 h-6 rounded-full " />
                 <div className="flex flex-col">
                   <span className="font-bold text-sm dark:text-neutral-300">

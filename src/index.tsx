@@ -1,24 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './assets/index.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ErrorPage from './pages/ErrorPage';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './App';
+import ScrollToTop from './utils/ScrollToTop';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomePage />,
-    errorElement: <ErrorPage />,
-  },
-]);
-
 root.render(
-  // <React.StrictMode>
-    <RouterProvider router={router} />
-  // </React.StrictMode>
+  <Router>
+    <ScrollToTop />
+    <App />
+  </Router>
 );

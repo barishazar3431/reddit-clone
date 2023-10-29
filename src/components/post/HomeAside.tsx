@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-type Props = {};
 
-export default function HomeAside({}: Props) {
+
+export default function HomeAside() {
   return (
     <aside className='bg-white dark:bg-neutral-900'>
       <div className='bg-[url("https://www.redditstatic.com/desktop2x/img/id-cards/home-banner@2x.png")] bg-contain bg-no-repeat h-10'></div>

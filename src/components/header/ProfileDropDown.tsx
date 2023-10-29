@@ -6,6 +6,7 @@ import { CgProfile } from 'react-icons/cg';
 import { FiLogOut } from 'react-icons/fi';
 import DropDownTriggerButton from './DropDownTriggerButton';
 import { Link } from 'react-router-dom';
+import ToggleSwitchButton from '../ui/ToggleSwitchButton';
 
 type Props = {};
 
@@ -26,15 +27,16 @@ export default function ProfileDropDown({}: Props) {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('isDarkTheme', 'false');
     }
-
   }, [isDarkTheme]);
 
-  const handleDarkThemeToggle = () => {
+  const handleDarkThemeToggle = (event: React.MouseEvent) => {
+    event.preventDefault();
     setIsDarkTheme((prev) => !prev);
+    console.log('clicked');
   };
 
   return (
-    <div ref={dropDownRef} className="relative ml-4">
+    <div ref={dropDownRef} className="relative ml-4 sm:ml-0">
       <DropDownTriggerButton onClick={toggleIsShown} isShown={isShown}>
         <div className="flex items-center">
           <img
@@ -88,10 +90,15 @@ export default function ProfileDropDown({}: Props) {
 
             <button onClick={handleDarkThemeToggle} className="block w-full">
               <div className="py-3 font-semibold text-black dark:text-neutral-300  grid grid-cols-12 items-center justify-items-start hover:bg-neutral-100 dark:hover:bg-neutral-800">
-                <span className="text-sm col-start-4 col-span-7">
+                <span className="text-sm col-start-4 col-span-6">
                   Dark Mode
                 </span>
-                <CgProfile className="text-2xl col-start-11 col-span-2" />
+                <div className="text-2xl col-start-10 col-span-3 flex items-center justify-self-center">
+                  <ToggleSwitchButton
+                    isChecked={isDarkTheme}
+                    handleInputToggle={handleDarkThemeToggle}
+                  />
+                </div>
               </div>
             </button>
           </div>
