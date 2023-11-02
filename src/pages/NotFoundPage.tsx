@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 function NotFoundPage() {
   return (
     <div className="h-screen flex items-center justify-center flex-col gap-3 px-3">
-      <img
-        src="https://www.redditstatic.com/reddit404b.png"
-        alt="Page Not Found"
-        className=""
-      />
+      <div className='max-w-lg'>
+        <img
+          src="https://www.redditstatic.com/reddit404b.png"
+          alt="Page Not Found"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <p className="font-bold text-lg dark:text-neutral-300">Page Not Found!</p>
       <p className="dark:text-neutral-300">
         The page you requested was not found

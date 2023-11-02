@@ -13,7 +13,7 @@ export default function CommunitiesDropDown() {
   return (
     <div className="relative" ref={dropDownRef}>
       <DropDownTriggerButton onClick={toggleIsShown} isShown={isShown}>
-        <div className="flex text-black dark:text-white justify-between items-center gap-2">
+        <div className="flex items-center justify-between gap-2 text-black dark:text-white">
           <AiFillHome className="text-2xl" />
           <span className="mr-40 text-sm font-light md:hidden">Home</span>
           <AiOutlineDown className="text-sm" />
@@ -35,7 +35,7 @@ export default function CommunitiesDropDown() {
               <li className="px-5 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800">
                 <Link to={'/'} className="flex items-center">
                   <img
-                    className="rounded-full w-5 mr-2"
+                    className="w-5 mr-2 rounded-full"
                     src={community.src}
                     alt="#"
                   />

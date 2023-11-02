@@ -10,10 +10,10 @@ export default function ToggleSwitchButton({
   handleInputToggle,
 }: Props) {
   return (
-    <label className="">
+    <label>
       <input
         type="checkbox"
-        className="invisible w-0 h-0 absolute peer"
+        className="absolute invisible w-0 h-0 peer"
         checked={isChecked}
         onChange={handleInputToggle}
       />

@@ -1,24 +1,48 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BiUpvote } from 'react-icons/bi';
 import { BiDownvote } from 'react-icons/bi';
 import { GoComment } from 'react-icons/go';
 import { LiaShareSolid } from 'react-icons/lia';
+import dummyData from '../../assets/DummyData';
 
-type Props = {};
+type Props = (typeof dummyData.posts)[0];
 
-export default function PostItem({}: Props) {
+export default function PostItem({
+  userImgSource,
+  userName,
+  upvotes,
+  content,
+  subredditName,
+  title,
+  postTime,
+  commentCount,
+  subredditLink,
+}: Props) {
+  const navigate = useNavigate();
+
+  const handleNavigate = (event: React.MouseEvent) => {
+    if (
+      event.target instanceof HTMLElement &&
+      event.target.closest('button, a')
+    )
+      return; //If clicked element is a button or a, ignore the navigation to the post.
+    navigate('/posts/12');
+  };
+
   return (
-    <Link
-      to="/posts/12"
+    <div
+      onClick={handleNavigate}
       className="bg-white dark:bg-neutral-900 border border-transparent hover:border-black dark:hover:border-neutral-500
-       flex gap-3 p-2 pb-0 rounded-md"
+       flex gap-3 p-2 pb-0 rounded-md cursor-pointer"
     >
       <div className="flex flex-col gap-1 items-center">
         <button>
           <BiUpvote className="text-neutral-500  text-2xl hover:bg-neutral-200 dark:hover:bg-neutral-800 hover:text-red-500" />
         </button>
-        <span className="font-bold text-xs dark:text-neutral-300">432</span>
+        <span className="font-bold text-xs dark:text-neutral-300">
+          {upvotes}
+        </span>
         <button>
           <BiDownvote className="text-neutral-500  text-2xl hover:bg-neutral-200 dark:hover:bg-neutral-800 hover:text-blue-500" />
         </button>
@@ -30,29 +54,26 @@ export default function PostItem({}: Props) {
             alt=""
             className="w-5 rounded-full"
           />
-          <Link to='/error' className="text-sm font-bold dark:text-neutral-300 hover:underline">r/unpopularopinion</Link>
+          <Link
+            to={subredditLink}
+            className="text-sm font-bold dark:text-neutral-300 hover:underline"
+          >
+            {subredditName}
+          </Link>
           <span className="text-neutral-500 text-xs">
-            &#x2022; Posted by u/JohnDoe 4 hours ago
+            &#x2022; Posted by {userName} {postTime}
           </span>
         </header>
         <div className="mt-2 mb-3 dark:text-neutral-300">
-          <span className="text-lg font-bold">
-            French tourists are the worst
-          </span>
-          <p className="mt-3">
-            I used to serve French tourists in NYC everyday and they were the
-            worst, they had no manners and understanding of common etiquette.
-            They’d yell, waste people’s time, make a mess, and not follow
-            instructions that they said they understood. Now I’ve travelled to 3
-            countries, currently in Japan and I’ve seen them do the same thing
-            and annoy the staff here. They obviously don’t say anything but it’s
-            annoying af to see. Not sure if they’re all like this but my god
-          </p>
+          <Link to="/posts/12" className="text-lg font-bold">
+            {title}
+          </Link>
+          <p className="mt-3">{content}</p>
         </div>
         <footer className="flex text-neutral-500 gap-1 -ml-1">
           <button className="flex gap-1 items-center hover:bg-neutral-200 dark:hover:bg-neutral-800 py-2 px-1">
             <GoComment className="text-2xl" />
-            <span className="text-xs font-bold">340 Comments</span>
+            <span className="text-xs font-bold">{commentCount} Comments</span>
           </button>
           <button className="flex gap-1 items-center hover:bg-neutral-200 dark:hover:bg-neutral-800 py-2 px-1">
             <LiaShareSolid className="text-2xl" />
@@ -60,6 +81,6 @@ export default function PostItem({}: Props) {
           </button>
         </footer>
       </div>
-    </Link>
+    </div>
   );
 }

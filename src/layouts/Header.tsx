@@ -9,7 +9,7 @@ function Header() {
   return (
     <header
       className="fixed top-0 w-full h-12 bg-white dark:bg-neutral-900 px-4 sm:px-1 border-b-neutral-200
-     dark:border-b-neutral-700 border-b flex items-center gap-1"
+     dark:border-b-neutral-700 border-b flex items-center gap-1 z-50"
     >
       <Link to={'/'} className="flex gap-2 pr-5 sm:pr-1">
         <div className='w-8'>

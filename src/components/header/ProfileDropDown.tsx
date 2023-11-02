@@ -32,7 +32,6 @@ export default function ProfileDropDown({}: Props) {
   const handleDarkThemeToggle = (event: React.MouseEvent) => {
     event.preventDefault();
     setIsDarkTheme((prev) => !prev);
-    console.log('clicked');
   };
 
   return (
@@ -47,8 +46,8 @@ export default function ProfileDropDown({}: Props) {
           <div className="flex flex-col mr-16 gap-[0.1rem] items-start lg:hidden">
             <span className="text-xs font-bold dark:text-white">John Doe</span>
             <div className="flex items-center gap-1">
-              <SiSecurityscorecard className="text-red-600 text-xs" />
-              <span className="text-xs text-slate-400 font-bold">
+              <SiSecurityscorecard className="text-xs text-red-600" />
+              <span className="text-xs font-bold text-slate-400">
                 11.3k karma
               </span>
             </div>
@@ -59,41 +58,41 @@ export default function ProfileDropDown({}: Props) {
 
       {isShown && (
         <div className="absolute right-0 mt-2 w-64 max-h-[75vh] bg-white rounded-sm dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700">
-          <div className="border border-transparent border-b-neutral-200 dark:border-b-neutral-700 pb-3">
-            <div className="pt-4 pb-3 font-bold text-neutral-400 dark:text-neutral-600  grid grid-cols-12 items-center">
-              <CgProfile className="text-2xl col-start-2 col-span-1" />
-              <span className="text-sm col-start-4 col-span-7">My Stuff</span>
+          <div className="pb-3 border border-transparent border-b-neutral-200 dark:border-b-neutral-700">
+            <div className="grid items-center grid-cols-12 pt-4 pb-3 font-bold text-neutral-400 dark:text-neutral-600">
+              <CgProfile className="col-span-1 col-start-2 text-2xl" />
+              <span className="col-span-7 col-start-4 text-sm">My Stuff</span>
             </div>
             <Link
               to={'/user/johndoe'}
-              className="py-3 font-semibold text-black dark:text-neutral-300  grid grid-cols-12 items-center hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              className="grid items-center grid-cols-12 py-3 font-semibold text-black dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             >
-              <span className="text-sm col-start-4 col-span-7">Profile</span>
+              <span className="col-span-7 col-start-4 text-sm">Profile</span>
             </Link>
             <Link
               to={'/user/johndoe'}
-              className="py-3 font-semibold text-black dark:text-neutral-300  grid grid-cols-12 items-center hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              className="grid items-center grid-cols-12 py-3 font-semibold text-black dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             >
-              <span className="text-sm col-start-4 col-span-7">
+              <span className="col-span-7 col-start-4 text-sm">
                 User Settings
               </span>
             </Link>
           </div>
 
-          <div className="border border-transparent border-b-neutral-200 dark:border-b-neutral-700 pb-3">
-            <div className="pt-4 pb-3 font-bold text-neutral-400 dark:text-neutral-600  grid grid-cols-12 items-center">
-              <AiOutlineEye className="text-2xl col-start-2 col-span-1" />
-              <span className="text-sm col-start-4 col-span-7">
+          <div className="pb-3 border border-transparent border-b-neutral-200 dark:border-b-neutral-700">
+            <div className="grid items-center grid-cols-12 pt-4 pb-3 font-bold text-neutral-400 dark:text-neutral-600">
+              <AiOutlineEye className="col-span-1 col-start-2 text-2xl" />
+              <span className="col-span-7 col-start-4 text-sm">
                 View Options
               </span>
             </div>
 
             <button onClick={handleDarkThemeToggle} className="block w-full">
-              <div className="py-3 font-semibold text-black dark:text-neutral-300  grid grid-cols-12 items-center justify-items-start hover:bg-neutral-100 dark:hover:bg-neutral-800">
-                <span className="text-sm col-start-4 col-span-6">
+              <div className="grid items-center grid-cols-12 py-3 font-semibold text-black dark:text-neutral-300 justify-items-start hover:bg-neutral-100 dark:hover:bg-neutral-800">
+                <span className="col-span-6 col-start-4 text-sm">
                   Dark Mode
                 </span>
-                <div className="text-2xl col-start-10 col-span-3 flex items-center justify-self-center">
+                <div className="flex items-center col-span-3 col-start-10 text-2xl justify-self-center">
                   <ToggleSwitchButton
                     isChecked={isDarkTheme}
                     handleInputToggle={handleDarkThemeToggle}
@@ -103,15 +102,15 @@ export default function ProfileDropDown({}: Props) {
             </button>
           </div>
 
-          <div className="border border-transparent pb-3 mt-3">
+          <div className="pb-3 mt-3 border border-transparent">
             <Link
               to={'/logout'}
-              className="py-3 font-semibold  text-black dark:text-neutral-300  grid grid-cols-12 items-center hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              className="grid items-center grid-cols-12 py-3 font-semibold text-black dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             >
-              <FiLogOut className="text-2xl col-start-2 col-span-2" />
-              <span className="text-sm col-start-4 col-span-7">Log Out</span>
+              <FiLogOut className="col-span-2 col-start-2 text-2xl" />
+              <span className="col-span-7 col-start-4 text-sm">Log Out</span>
             </Link>
-            <div className="pt-4 pb-3 font-bold text-neutral-400 dark:text-neutral-600  grid grid-cols-12 items-center">
+            <div className="grid items-center grid-cols-12 pt-4 pb-3 font-bold text-neutral-400 dark:text-neutral-600">
               <span className="text-[0.7rem] col-start-2 col-span-10">
                 Reddit, Inc. © 2023. All rights reserved.
               </span>
