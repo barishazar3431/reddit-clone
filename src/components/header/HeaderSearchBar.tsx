@@ -9,16 +9,26 @@ export default function HeaderSearchBar() {
 
   useEffect(() => {
     const handleKeyEvent = (event: KeyboardEvent) => {
-      if (event.key === '?' || event.key === '/') {
-        inputRef.current?.focus();
+      const inputElement = inputRef.current;
+      if (!inputElement) return;
+      if ((event.target as HTMLElement).closest('input, textarea, select'))
+        return;
+      
+      event.preventDefault();
+      if (
+        event.key === '?' ||
+        event.key === '/' ||
+        (event.ctrlKey && event.key === 'k')
+      ) {
+        inputElement.focus();
       } else if (event.key === 'Escape') {
-        inputRef.current?.blur();
+        inputElement.blur();
       }
     };
-    document.addEventListener('keyup', handleKeyEvent);
+    document.addEventListener('keydown', handleKeyEvent);
 
     return () => {
-      document.removeEventListener('keyup', handleKeyEvent);
+      document.removeEventListener('keydown', handleKeyEvent);
     };
   }, []);
 

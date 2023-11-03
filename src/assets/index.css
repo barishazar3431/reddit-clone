@@ -36,7 +36,8 @@
 
   .btn-secondary {
     @apply btn bg-blue-600 dark:bg-neutral-200 hover:brightness-110 active:brightness-125 text-white 
-      dark:text-neutral-900 dark:hover:brightness-95 dark:active:brightness-90;
+      dark:text-neutral-900 dark:hover:brightness-95 dark:active:brightness-90 disabled:bg-neutral-400 disabled:cursor-not-allowed disabled:text-neutral-300
+      dark:disabled:text-neutral-500;
   }
 
   .btn-secondary-outline {

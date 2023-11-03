@@ -2,12 +2,12 @@ import React from 'react';
 
 type Props = {
   isChecked: boolean;
-  handleInputToggle: (param: any) => void;
+  onChange: (param: any) => void;
 };
 
 export default function ToggleSwitchButton({
   isChecked,
-  handleInputToggle,
+  onChange,
 }: Props) {
   return (
     <label>
@@ -15,7 +15,7 @@ export default function ToggleSwitchButton({
         type="checkbox"
         className="absolute invisible w-0 h-0 peer"
         checked={isChecked}
-        onChange={handleInputToggle}
+        onChange={onChange}
       />
       <div
         className="w-10 h-6 rounded-full bg-neutral-300 dark:bg-neutral-600 peer-checked:bg-blue-600 transition relative cursor-pointer

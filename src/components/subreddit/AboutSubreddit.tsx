@@ -5,9 +5,9 @@ type Props = {};
 
 export default function AboutSubreddit({}: Props) {
   return (
-    <div className="overflow-hidden bg-white dark:bg-neutral-900 border rounded-md border-neutral-300 dark:border-neutral-700">
+    <aside className="overflow-hidden bg-white dark:bg-neutral-900 border rounded-md border-neutral-300 dark:border-neutral-700">
       <div className="h-12 bg-blue-600"></div>
-      <header className="flex flex-col gap-3 p-4 mb-2 border-b border-b-neutral-300 dark:border-b-neutral-700">
+      <header className="flex flex-col gap-3 p-4 mb-2 border-b border-b-neutral-200 dark:border-b-neutral-700">
         <div className="flex items-center gap-3">
           <div className="bg-blue-600 rounded-full h-14 w-14">
             <img
@@ -25,7 +25,7 @@ export default function AboutSubreddit({}: Props) {
         </div>
       </header>
       <div>
-        <div className='flex flex-col items-center border-b border-b-neutral-300 dark:border-b-neutral-700 pb-2 dark:text-neutral-200'>
+        <div className='flex flex-col items-center border-b border-b-neutral-200 dark:border-b-neutral-700 pb-2 dark:text-neutral-200'>
           <span>4.0m</span>
           <span>Members</span>
         </div>
@@ -33,6 +33,6 @@ export default function AboutSubreddit({}: Props) {
       <footer className='p-4'>
         <Link to='/submit' className='btn-secondary w-full justify-center'>Create Post</Link>
       </footer>
-    </div>
+    </aside>
   );
 }

@@ -9,13 +9,15 @@ import Container from '../components/ui/Container';
 
 function HomePage() {
   return (
-    <section className='mt-3'>
+    <section className="mt-3">
       <Container>
         <TwoColumnLayout
           left={
             <>
               <CreatePost />
-              <PostList />
+              <main>
+                <PostList />
+              </main>
             </>
           }
           right={<HomeAside />}

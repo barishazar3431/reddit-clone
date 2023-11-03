@@ -3,7 +3,9 @@ import colors from 'tailwindcss/colors';
 
 export const content = ['./src/**/*.{js,jsx,ts,tsx}'];
 export const theme = {
-  extend: {},
+  extend: {
+    
+  },
   colors: {
     ...colors,
   },
@@ -15,6 +17,8 @@ export const theme = {
     md: { max: '767px' },
 
     sm: { max: '639px' },
+
+    xs: { max: '500px' },
   },
 };
 export const plugins = [];

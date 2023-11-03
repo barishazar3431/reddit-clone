@@ -7,32 +7,18 @@ import { FiLogOut } from 'react-icons/fi';
 import DropDownTriggerButton from './DropDownTriggerButton';
 import { Link } from 'react-router-dom';
 import ToggleSwitchButton from '../ui/ToggleSwitchButton';
+import { useTheme } from '../../contexts/ThemeContext';
 
 type Props = {};
 
 export default function ProfileDropDown({}: Props) {
   const { dropDownRef, isShown, toggleIsShown } = useDropDown();
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
-
-  useEffect(() => {
-    const isDarkTheme = localStorage.getItem('isDarkTheme') === 'true';
-    setIsDarkTheme(isDarkTheme);
-  }, []);
-
-  useEffect(() => {
-    if (isDarkTheme) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('isDarkTheme', 'true');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('isDarkTheme', 'false');
-    }
-  }, [isDarkTheme]);
+  const { isDarkTheme, toggleDarkTheme } = useTheme();
 
   const handleDarkThemeToggle = (event: React.MouseEvent) => {
     event.preventDefault();
-    setIsDarkTheme((prev) => !prev);
-  };
+    toggleDarkTheme();
+  }
 
   return (
     <div ref={dropDownRef} className="relative ml-4 sm:ml-0">
@@ -95,7 +81,7 @@ export default function ProfileDropDown({}: Props) {
                 <div className="flex items-center col-span-3 col-start-10 text-2xl justify-self-center">
                   <ToggleSwitchButton
                     isChecked={isDarkTheme}
-                    handleInputToggle={handleDarkThemeToggle}
+                    onChange={handleDarkThemeToggle}
                   />
                 </div>
               </div>
