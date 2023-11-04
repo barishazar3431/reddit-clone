@@ -13,27 +13,39 @@ type Props = {
 };
 
 export default function PostComment({ children }: Props) {
-  const [showChildren, setShowChildren] = useState(true);
+  const [areChildrenVisible, setAreChildrenVisible] = useState(true);
+  const [isCommentFormVisible, setIsCommentFormVisible] = useState(false);
 
-  const toggleShowChildren = () => {
-    setShowChildren((prevState) => !prevState);
+  const toggleChildrenVisibility = () => {
+    setAreChildrenVisible((prevState) => !prevState);
+  };
+
+  const toggleCommentFormVisibility = () => {
+    setIsCommentFormVisible((prevState) => !prevState);
   };
 
   return (
-    <div className="relative mx-3">
-      <button
-        onClick={toggleShowChildren}
-        className="absolute bottom-0 top-14 left-6 -translate-x-1/2 before:static before:block before:w-[2px]
-       before:bg-neutral-300 before:hover:bg-blue-600 before:h-full before:mx-1 "
-      ></button>
+    <div className="relative mx-4">
+      {areChildrenVisible && (
+        <button
+          onClick={toggleChildrenVisibility}
+          className="absolute bottom-0 top-14 left-6 -translate-x-1/2 before:static before:block before:w-[2px]
+       before:bg-neutral-300 before:hover:bg-blue-600 before:h-full before:mx-1 
+        dark:before:bg-neutral-600 dark:before:hover:bg-white"
+        ></button>
+      )}
 
-      <div className={`flex items-start transition ${!showChildren ? 'translate-x-6' : ''}`}>
-        {!showChildren && (
+      <div
+        className={`flex items-start transition ${
+          !areChildrenVisible ? 'translate-x-8' : ''
+        }`}
+      >
+        {!areChildrenVisible && (
           <button
-            onClick={toggleShowChildren}
-            className="absolute -left-5 top-3"
+            onClick={toggleChildrenVisibility}
+            className="absolute -left-8 top-1/2 -translate-y-1/2"
           >
-            <BiMoveVertical className="text-2xl" />
+            <BiMoveVertical className="text-2xl dark:text-blue-800" />
           </button>
         )}
         <div
@@ -47,15 +59,15 @@ export default function PostComment({ children }: Props) {
         </div>
         <div className="mt-3">
           <div className="mb-3">
-            <Link to="/user/1" className="text-sm font-bold mr-1">
+            <Link to="/user/1" className="text-sm font-bold mr-1 dark:text-neutral-300">
               John Doe
             </Link>
             <span className="text-xs text-neutral-500 mr-1">&#x2022;</span>
             <span className="text-neutral-500 text-xs"> 2 hours ago</span>
           </div>
-          {showChildren && (
+          {areChildrenVisible && (
             <div className="">
-              <p className="whitespace-pre-line mb-3">
+              <p className="whitespace-pre-line mb-3 dark:text-neutral-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 <br />
                 <br />
@@ -70,15 +82,24 @@ export default function PostComment({ children }: Props) {
               <footer className="text-neutral-500 flex items-center gap-2">
                 <VoteButtons upvotes={87} orientation="horizontal" />
                 <PostButton
+                  onClick={toggleCommentFormVisibility}
                   icon={<GoComment className="text-2xl" />}
                   text={<p className="text-xs font-bold">Reply</p>}
                 />
               </footer>
+              {isCommentFormVisible && (
+                <div className="px-3 mt-3">
+                  <AddCommentForm
+                    showCancelButton={true}
+                    setIsCommentFormVisible={setIsCommentFormVisible}
+                  />
+                </div>
+              )}
             </div>
           )}
         </div>
       </div>
-      <div className="ml-8 mt-4">{showChildren && children}</div>
+      <div className="ml-8 mt-4">{areChildrenVisible && children}</div>
     </div>
   );
 }

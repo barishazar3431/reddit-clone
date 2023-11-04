@@ -23,7 +23,7 @@ export default function SubredditHeader({}: Props) {
 export function SubredditHeaderLink() {
   const { subredditId: subredditName } = useParams();
   return (
-    <Link to="/r/subredditId" className="flex items-center gap-5 xs:gap-0">
+    <Link to={`/r/${subredditName}`} className="flex items-center gap-5 xs:gap-0">
       <div className="bg-white dark:bg-neutral-900 rounded-full">
         <img
           src="https://styles.redditmedia.com/t5_2w844/styles/communityIcon_krq4riav5m191.png?width=256&s=3bb045009d2a9d1d7543dc7afb7b53a0e6f18121"

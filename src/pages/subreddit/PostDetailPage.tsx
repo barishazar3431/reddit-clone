@@ -12,7 +12,9 @@ export default function PostDetailPage() {
   const left = (
     <div className="bg-white dark:bg-neutral-900 pb-3">
       <PostItem {...dummyData.posts[0]} isClickable={false} />
-      <AddCommentForm />
+      <div className="px-9 mt-6">
+        <AddCommentForm />
+      </div>
       <div className='mt-8'>
         <PostComment>
           <PostComment>
