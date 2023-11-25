@@ -7,14 +7,11 @@ export default function HeaderSearchBar() {
   const { dropDownRef, isShown, setIsShown } = useDropDown();
   const inputRef = useRef<HTMLInputElement>(null);
 
+
   useEffect(() => {
     const handleKeyEvent = (event: KeyboardEvent) => {
       const inputElement = inputRef.current;
       if (!inputElement) return;
-      if (event.key === 'Escape') {
-        inputElement.blur();
-        return;
-      }
       if ((event.target as HTMLElement).closest('input, textarea, select'))
         return;
 

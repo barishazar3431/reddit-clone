@@ -9,7 +9,10 @@ type ThemeContextType = {
   toggleDarkTheme: (event?: React.SyntheticEvent) => void;
 };
 
-const initialContext: ThemeContextType = {isDarkTheme: false, toggleDarkTheme: () => {}};
+const initialContext: ThemeContextType = {
+  isDarkTheme: false,
+  toggleDarkTheme: () => {},
+};
 
 const ThemeContext = React.createContext(initialContext);
 
