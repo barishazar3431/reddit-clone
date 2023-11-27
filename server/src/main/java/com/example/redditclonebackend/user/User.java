@@ -15,14 +15,18 @@ public class User {
 
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     public User() {
     }
 
-    public User(Integer id, String username, String email, String password) {
+    public User(Integer id, String username, String email, String password, Role role) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public Integer getId() {
@@ -55,6 +59,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
