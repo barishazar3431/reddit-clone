@@ -64,8 +64,6 @@ public class JWTService {
     }
 
     private SecretKey getSigningKey() {
-        System.out.println(secretKey);
-
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(secretKey));
     }
 }
