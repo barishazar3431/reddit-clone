@@ -1,8 +1,9 @@
 # Reddit Clone
 
-```
-This project is going to be built with React.js and TailwindCSS on front-end and Spring Boot on back-end. Right now, it is not complete.
-```
+
+This project is going to be built with React.js and TailwindCSS on front-end and Spring Boot on back-end. 
+Right now, it is not complete.
+
 
 ## Preview
 
