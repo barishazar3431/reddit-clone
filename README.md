@@ -1,3 +1,9 @@
-# Reddit Clone 
+# Reddit Clone
 
-This project is built with Spring Boot on back-end  and React.js on front-end (Back-end is not complete but you can see the front-end code)
+```
+This project is going to be built with React.js and TailwindCSS on front-end and Spring Boot on back-end. Right now, it is not complete.
+```
+
+## Preview
+
+You can preview the front-end design at (Doesn't interact with a back-end but the design is almost complete.): https://reddit-frontend-c6808.web.app/
